@@ -1,6 +1,6 @@
 #A basic chat app using Rails and ActionCable
 
-[https://chatcluster.herokuapp.com/](On Heroku)
+https://chatcluster.herokuapp.com/
 
 Testing real-time updates using ActionCable
 
