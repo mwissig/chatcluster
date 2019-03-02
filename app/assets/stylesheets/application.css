@@ -50,9 +50,9 @@ h1 {
   height: calc(100vh - 115px);
   max-height: calc(100vh - 115px);
   overflow-y: scroll;
-  padding-bottom: 65px;
+  padding-bottom: 35px;
   position: absolute;
-  bottom: 0;
+  bottom: 30px;
 }
 
 .post {
@@ -129,7 +129,17 @@ a, a:visited {
   color: white;
   text-decoration: none;
 }
-
+@-moz-document url-prefix(){
+  #posts {
+    width: 100%;
+    height: calc(100vh - 170px);
+    max-height: calc(100vh - 170px);
+    overflow-y: scroll;
+    padding-bottom: 65px;
+    position: absolute;
+    bottom: 60px;
+  }
+}
 @media only screen and (max-width: 500px) {
   form input[type="text"] {
     width: 70%;
