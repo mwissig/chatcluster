@@ -57,7 +57,6 @@ TO CONVERT A STANDARD RAILS APP INTO AN APP WITH REAL-TIME UPDATES
  
 1. in gemfile add
 
-       gem 'kramdown', '1.10.0'
        gem 'redis', '3.3.1'
        
 2. in terminal:
