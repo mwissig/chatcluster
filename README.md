@@ -67,7 +67,8 @@ TO CONVERT A STANDARD RAILS APP INTO AN APP WITH REAL-TIME UPDATES
 3. in terminal:
 
        heroku config | grep REDISTOGO_URL
-       copy url this returns
+       
+      copy url this returns
     
   4. in cable.yml
   
