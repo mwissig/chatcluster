@@ -1,8 +1,7 @@
 #A basic chat app using Rails and ActionCable
 
-https://chatcluster.herokuapp.com/
-
-Testing real-time updates using ActionCable
+BASED ON THE TUTORIAL AT:
+https://www.learnenough.com/action-cable-tutorial
 
 TO CONVERT A STANDARD RAILS APP INTO AN APP WITH REAL-TIME UPDATES
 
