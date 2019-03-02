@@ -6,7 +6,7 @@ https://chatcluster.herokuapp.com
 BASED ON THE TUTORIAL AT:
 https://www.learnenough.com/action-cable-tutorial
 
-TO CONVERT A STANDARD RAILS APP INTO AN APP WITH REAL-TIME UPDATES
+## TO CONVERT A STANDARD RAILS APP INTO AN APP WITH REAL-TIME UPDATES
 
 *Jquery may be required
 
@@ -53,7 +53,7 @@ TO CONVERT A STANDARD RAILS APP INTO AN APP WITH REAL-TIME UPDATES
       
       (Plus some extra code to scroll to the bottom for each new chat post)
           
- TO DEPLOY ON HEROKU:
+## TO DEPLOY ON HEROKU:
  
 1. in gemfile add
 
