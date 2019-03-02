@@ -57,12 +57,17 @@ h1 {
   width: calc(100% - 3em);
   text-align: left;
 }
-
+form {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 5px;
+  width:calc(100% - 20px);
+}
 form input {
   padding: 5px 10px;
   border-radius: 5px;
   background-color: white;
-  margin: 0 5px;
 }
 
 form input[type="text"] {
@@ -70,17 +75,31 @@ form input[type="text"] {
   border: none;
   font-family: 'Arimo', sans-serif;
   font-size: 18px;
+   align-self: flex-end;
+   margin-right: 5px;
 }
 
-form input[type="submit"] {
+form input[type="submit"], button {
   font-family: 'Coiny', cursive;
-  color: black;
+  color: white;
   border: none;
-  background-color: rgb(205, 223, 255);
+  background-color: rgb(0, 19, 144);
   padding: 5px 10px;
   font-size: 18px;
+  align-self: flex-end;
+  cursor: pointer;
+  padding: 3px 6px;
+  border-radius: 5px;
+  border: 2px solid white;
 }
-
+form input[type="submit"]:hover, form input[type="submit"]:active, button:hover, button:active {
+  background-color: rgb(0, 9, 69);
+}
+small {
+  color: white;
+  text-align: left;
+  width: 95%;
+}
 footer {
   width: 100%;
   background-color: rgb(0, 19, 144);
@@ -89,7 +108,7 @@ footer {
   left: 0;
   text-align: center;
   margin: 0;
-  padding: 0 10px;
+  padding: 5px 0;
   height: 3em;
   z-index: 10;
 }

@@ -6,6 +6,9 @@
 <footer>
 <%= form_for( @post, remote: true ) do |f| %>
 <%= f.text_field :body %>
-<%= f.submit "Send" %>
+<%= f.button :submit do %>
+Send &#9166
 <% end %>
+<% end %>
+<small> Press Delete to Clear Text Field </small>
 </footer>
