@@ -1,5 +1,8 @@
 #A basic chat app using Rails and ActionCable
 
+See this deployed at:
+https://chatcluster.herokuapp.com
+
 BASED ON THE TUTORIAL AT:
 https://www.learnenough.com/action-cable-tutorial
 
