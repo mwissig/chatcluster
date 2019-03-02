@@ -55,7 +55,7 @@ h1 {
   padding: 5px 1.5em;
   border-bottom: 1px solid rgb(181, 196, 218);
   width: calc(100% - 3em);
-  text-align: right;
+  text-align: left;
 }
 
 form input {
@@ -97,5 +97,11 @@ footer {
 @media only screen and (max-width: 500px) {
   form input[type="text"] {
     width: 70%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  form input[type="text"] {
+    width: 60%;
   }
 }
