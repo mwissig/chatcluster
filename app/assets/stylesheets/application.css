@@ -31,22 +31,26 @@ header {
   left: 0;
   text-align: center;
   margin: 0;
-  padding: 10px 0;
+  padding: 0;
+  padding-bottom: 10px;
   z-index: 10;
+  height: 50px;
+  max-height: 35px;
+  overflow: hidden;
 }
 
 h1 {
   color: white;
-  margin: 0 auto;
+  margin: -5px auto;
   font-family: 'Coiny', cursive;
 }
 
 #posts {
   width: 100%;
-  height: calc(100vh - 7em);
-  max-height: calc(100vh - 7em);
+  height: calc(100vh - 115px);
+  max-height: calc(100vh - 115px);
   overflow-y: scroll;
-  padding-bottom: 3.5em;
+  padding-bottom: 65px;
   position: absolute;
   bottom: 0;
 }
@@ -77,6 +81,7 @@ form input[type="text"] {
   font-size: 18px;
    align-self: flex-end;
    margin-right: 5px;
+   height: 20px;
 }
 
 form input[type="submit"], button {
@@ -88,9 +93,12 @@ form input[type="submit"], button {
   font-size: 18px;
   align-self: flex-end;
   cursor: pointer;
-  padding: 3px 6px;
+  padding: 0 5px;
+
+  height: 30px;
   border-radius: 5px;
   border: 2px solid white;
+  overflow: hidden;
 }
 form input[type="submit"]:hover, form input[type="submit"]:active, button:hover, button:active {
   background-color: rgb(0, 9, 69);
@@ -109,13 +117,13 @@ footer {
   text-align: center;
   margin: 0;
   padding: 5px 0;
-  height: 3em;
+  height: 50px;
   z-index: 10;
 }
 .github {
   position: fixed;
-  top: 5px;
-right: 1em;
+  top: -5px;
+right: 10px;
 }
 a, a:visited {
   color: white;
@@ -127,7 +135,7 @@ a, a:visited {
     width: 70%;
   }
   .github {
-  right: .5em;
+  right: 5px;
   }
 }
 
