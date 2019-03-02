@@ -3,9 +3,9 @@
 <div class="post"><%= po.body %></div>
 <% end %>
 </div>
-<div id='form'>
+<footer>
 <%= form_for( @post, remote: true ) do |f| %>
 <%= f.text_field :body %>
 <%= f.submit "Send" %>
 <% end %>
-</div>
+</footer>
