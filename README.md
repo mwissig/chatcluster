@@ -4,6 +4,8 @@ https://chatcluster.herokuapp.com/
 
 Testing real-time updates using ActionCable
 
+TO CONVERT A STANDARD RAILS APP INTO AN APP WITH REAL-TIME UPDATES
+
 1. rails g channel CHANNELNAME<br/>
   creates CHANNELNAME_channel.rb<br/>
   in def subsribed: <br/>
@@ -27,7 +29,14 @@ end
 5. in CHANNELNAME.coffee<br/>
     received: (data) -><br/>
           COFFEESCRIPT ACTION IN RESPONSE TO RECIEVED DATA <br/>
-          (ex. alert data.column produces an alert)
+          (ex. alert data.column produces an alert)<br/>
+          If making a simple chat, this is where you want to append the new message as it comes in.<br/>
+          For example, in chatcluster, the code is:
+          
+    unless data.body.blank? <br/>
+      $('#posts').append '<div class="post">' + data.body + '</div>' <br/>
+      
+      (Plus some extra code to scroll to the bottom for each new chat post)
           
  TO DEPLOY ON HEROKU:
  
