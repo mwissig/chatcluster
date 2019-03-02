@@ -12,58 +12,73 @@ TO CONVERT A STANDARD RAILS APP INTO AN APP WITH REAL-TIME UPDATES
 
 1. rails g channel CHANNELNAME<br/>
   creates CHANNELNAME_channel.rb<br/>
-  in def subsribed: <br/>
-    stream_from "CHANNELNAME_channel"
+  
+     def subsribed
+      stream_from "CHANNELNAME_channel"
+     end
     
-2. in controller for model associated with channel:<br/>
-  def create<br/>
-    @model = MODEL.new(model_params)<br/>
-      if @model.save<br/>
-        ActionCable.server.broadcast 'CHANNELNAME_channel"<br/>
-                              content: @model.column<br/>
-   end<br/>
-end
+2. in controller for model associated with channel:
 
-3. in routes.rb<br/>
-  mount ActionCable.server, at '/cable'<br/>
+        def create
+         @model = MODEL.new(model_params)
+            if @model.save
+               ActionCable.server.broadcast 'CHANNELNAME_channel"
+                                      content: @model.column
+          end
+        end
 
-4. On form:<br/>
-    form_for(@model, remote: true)
+3. in routes.rb
+
+       mount ActionCable.server, at '/cable'
+
+4. On form:
+
+        form_for(@model, remote: true)
     
 5. in CHANNELNAME.coffee<br/>
-    received: (data) -><br/>
-          COFFEESCRIPT ACTION IN RESPONSE TO RECIEVED DATA <br/>
-          (ex. alert data.column produces an alert)<br/>
-          If making a simple chat, this is where you want to append the new message as it comes in.<br/>
-          For example, in chatcluster, the code is:
+
+       received: (data) ->
+           COFFEESCRIPT ACTION IN RESPONSE TO RECIEVED DATA
+          
+          (ex. alert data.column produces an alert)
+          
+      If making a simple chat, this is where you want to append the new message as it comes in.
+      For example, in chatcluster, the code is:
           
     unless data.body.blank? <br/>
-      $('#posts').append '<div class="post">' + data.body + '</div>' <br/>
+    
+        $('#posts').append '<div class="post">' + data.body + '</div>'
       
       (Plus some extra code to scroll to the bottom for each new chat post)
           
  TO DEPLOY ON HEROKU:
  
-1.  add gem 'kramdown', '1.10.0'<br/>
+1. in gemfile add
+
+       gem 'kramdown', '1.10.0'
        gem 'redis', '3.3.1'
        
-2. in terminal:<br/>
-    heroku addons:create redistogo
+2. in terminal:
+
+       heroku addons:create redistogo
     
-3. in terminal:<br/>
-    heroku config | grep REDISTOGO_URL<br/>
-    copy url this returns<br/>
+3. in terminal:
+
+       heroku config | grep REDISTOGO_URL
+       copy url this returns
     
-  4. in cable.yml<br/>
-production:<br/>
-  adapter: redis<br/>
-  url: THE URL YOU GOT IN STEP 3
-    
-5. in production.rb add<br/>
-   config.action_cable.url = 'wss://appname.herokuapp.com/cable'<br/>
-  config.action_cable.allowed_request_origins = [<br/>
-  'https://appname.herokuapp.com' ]
+  4. in cable.yml
   
+    production:
+     adapter: redis
+      url: THE URL YOU GOT IN STEP 3
+    
+5. in production.rb add
+
+        config.action_cable.url = 'wss://appname.herokuapp.com/cable'
+        config.action_cable.allowed_request_origins = [
+       'https://appname.herokuapp.com' ]
+    
 
     
  
