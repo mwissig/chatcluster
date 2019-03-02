@@ -10,7 +10,10 @@ TO CONVERT A STANDARD RAILS APP INTO AN APP WITH REAL-TIME UPDATES
 
 *Jquery may be required
 
-1. rails g channel CHANNELNAME<br/>
+1. In terminal:
+
+        rails g channel CHANNELNAME
+
   creates CHANNELNAME_channel.rb<br/>
   
      def subsribed
@@ -35,7 +38,7 @@ TO CONVERT A STANDARD RAILS APP INTO AN APP WITH REAL-TIME UPDATES
 
         form_for(@model, remote: true)
     
-5. in CHANNELNAME.coffee<br/>
+5. in CHANNELNAME.coffee
 
        received: (data) ->
            COFFEESCRIPT ACTION IN RESPONSE TO RECIEVED DATA
@@ -45,9 +48,8 @@ TO CONVERT A STANDARD RAILS APP INTO AN APP WITH REAL-TIME UPDATES
       If making a simple chat, this is where you want to append the new message as it comes in.
       For example, in chatcluster, the code is:
           
-    unless data.body.blank? <br/>
-    
-        $('#posts').append '<div class="post">' + data.body + '</div>'
+        unless data.body.blank? 
+         $('#posts').append '<div class="post">' + data.body + '</div>'
       
       (Plus some extra code to scroll to the bottom for each new chat post)
           
@@ -71,7 +73,7 @@ TO CONVERT A STANDARD RAILS APP INTO AN APP WITH REAL-TIME UPDATES
   
     production:
      adapter: redis
-      url: THE URL YOU GOT IN STEP 3
+     url: THE URL YOU GOT IN STEP 3
     
 5. in production.rb add
 
