@@ -6,6 +6,8 @@ Testing real-time updates using ActionCable
 
 TO CONVERT A STANDARD RAILS APP INTO AN APP WITH REAL-TIME UPDATES
 
+*Jquery may be required
+
 1. rails g channel CHANNELNAME<br/>
   creates CHANNELNAME_channel.rb<br/>
   in def subsribed: <br/>
