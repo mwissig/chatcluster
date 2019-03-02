@@ -16,3 +16,23 @@
 //= require_tree .
 //= require jquery
 //= require jquery_ujs
+
+
+
+
+function clear() {
+document.getElementById("post_body").value="";
+}
+
+window.addEventListener('load', function() {
+  var box = document.getElementById('posts')
+  box.scrollTop = box.scrollHeight;
+});
+
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+        case 46:
+          clear();
+            break;
+          }};

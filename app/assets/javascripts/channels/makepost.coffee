@@ -12,4 +12,3 @@ App.makepost = App.cable.subscriptions.create "MakepostChannel",
 
 scroll_bottom = () ->
   $('#posts').scrollTop($('#posts')[0].scrollHeight)
-  console.log(scrollHeight)
