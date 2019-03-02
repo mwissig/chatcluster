@@ -5,12 +5,11 @@ class PostsController < ApplicationController
   end
 
   def create
-    post = current_user.posts.build(post_params)
-    if post.save
-      redirect_to posts_url
-    else
-      render 'index'
-    end
+    @post = Post.new(post_params)
+    if @post.save
+      ActionCable.server.broadcast 'makepost_channel',
+                                   body:  @post.body
+     end
   end
 
   private
