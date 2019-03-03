@@ -8,7 +8,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     if @post.save
       ActionCable.server.broadcast 'makepost_channel',
-                                   body:  @post.body,
+                                   body:  @post.body
      end
   end
 
