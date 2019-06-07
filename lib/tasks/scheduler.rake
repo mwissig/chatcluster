@@ -1,10 +1,7 @@
-namespace :db do
 
 desc "This task is called by the Heroku scheduler add-on"
-task :delete_30_days_old => :environment do
+task :delete_old_posts => :environment do
   puts "Deleting old posts"
-  Post.where(['created_at < ?', 30.days.ago]).destroy_all
+  Post.delete_all ["created_at < ?", 14.days.ago]
   puts "done."
-end
-
 end
