@@ -9,6 +9,11 @@ App.makepost = App.cable.subscriptions.create "MakepostChannel",
     unless data.body.blank?
       $('#posts').append '<div class="post">' + data.body + '</div>'
     scroll_bottom()
+    clear()
 
 scroll_bottom = () ->
   $('#posts').scrollTop($('#posts')[0].scrollHeight)
+
+clear = ->
+  document.getElementById('post_body').value = ''
+  return
