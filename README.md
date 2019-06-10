@@ -32,7 +32,7 @@ https://www.learnenough.com/action-cable-tutorial
 
 3. in routes.rb
 
-       mount ActionCable.server, at '/cable'
+       mount ActionCable.server, at: '/cable'
 
 4. On form:
 
